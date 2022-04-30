@@ -1,4 +1,4 @@
-const Form = (username, setUsername, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword) => {
+const Form = ({username, setUsername, email, setEmail, password, setPassword, confirmPassword, setConfirmPassword, valid, setValid}) => {
 
 return (
 
@@ -7,6 +7,7 @@ return (
         event.preventDefault();
       }}
     >
+      <h1>Write your infos</h1>
       <input
         type="text"
         placeholder="Your Username"
@@ -39,7 +40,11 @@ return (
         }}
         value={confirmPassword}
       />
-      <input type="submit" value="Submit" />
+      <button
+      onClick={() => {;
+        {password === confirmPassword ? setValid(true) : alert("Passwords don't match")}
+      }}
+      >SUBMIT</button>
     </form>
 
 )

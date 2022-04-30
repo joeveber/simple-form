@@ -14,20 +14,15 @@ function App() {
 
   const [valid, setValid] = useState(false);
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
 
-  //   if (password === confirmPassword) {
-  //     setValid(true);
-  //   } else {
-  //     alert("Les mots de passe ne sont pas identiques !!");
-  //   }
-  // };
   console.log(username);
  
   return (
+
     <div className="App">
        
+    {valid === false ?
+    
     <Form
     username = {username}
     setUsername = {setUsername}
@@ -37,18 +32,20 @@ function App() {
     setPassword = {setPassword}
     confirmPassword = {confirmPassword}
     setConfirmPassword = {setConfirmPassword}
+    valid = {valid}
+    setValid = {setValid}
     />
-
-
-
-
+    
+    : 
+    
     <Results
     username = {username}
     email = {email}
     password = {password}
     setValid = {setValid}
     />
-        
+
+    }
 
     </div>
   );
